@@ -4,7 +4,7 @@
 
 ## Technologies Used: html, css, and java script
 
-## ![Password Generator Img] (/assets/img/password-generator-image.png)
+## ![Password Generator Img] (assets/img/password-generator-image.png)
 
 ## [Github Live link]: https://alab01.github.io/password-generator-aa/
 
