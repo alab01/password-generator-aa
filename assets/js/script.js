@@ -48,14 +48,33 @@ function generatePassword() {
           if (password.length === passwordLen)
             break;
         } 
-      }
+        if (shouldIncludeUppercase) {
+          var randIndex = Math.floor(Math.random()*uppercaseLetters.length);
+          password = password + uppercaseLetters[randIndex];
+          if (password.length === passwordLen)
+            break;
+        } 
+        if (shouldIncludeNumeric) {
+          var randIndex = Math.floor(Math.random()*numbers.length);
+          password = password + numbers[randIndex];
+          if (password.length === passwordLen)
+            break;
+        } 
+        if (shouldIncludeSpecialCharacter) {
+          var randIndex = Math.floor(Math.random()*special.length);
+          password = password + special[randIndex];
+          if (password.length === passwordLen)
+            break;
+        }
+      } 
+      return password;
+    } else {
+      return "Password must contain at least one of the four: 1. Lowercase 2. Uppercase 3. Numbers 4. Special Characters";
     }
+  } else {
+    return "Password length must be between 8 to 128 characters.";
   }
 }
-
-
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
