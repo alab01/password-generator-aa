@@ -38,8 +38,24 @@ function generatePassword() {
     if (specialCharacter === "yes") {
       shouldIncludeSpecialCharacter = true;
     }
+
+    if (shouldIncludeLowercase || shouldIncludeUppercase || shouldIncludeNumeric || shouldIncludeSpecialCharacter) {
+      var password = "";
+      while (password.length != passwordLen) {
+        if (shouldIncludeLowercase) {
+          var randIndex = Math.floor(Math.random()*lowercaseLetters.length);
+          password = password + lowercaseLetters[randIndex];
+          if (password.length === passwordLen)
+            break;
+        } 
+      }
+    }
   }
 }
+
+
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
